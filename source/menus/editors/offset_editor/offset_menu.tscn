@@ -1,0 +1,162 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2do8tvklsreq"]
+
+[ext_resource type="Script" uid="uid://cokaevuerhcpk" path="res://source/menus/editors/offset_editor/offset_menu.gd" id="1_vft5f"]
+[ext_resource type="PackedScene" uid="uid://ci7s7lxw8p2bl" path="res://source/stage/stage.tscn" id="2_l24p0"]
+
+[node name="OffsetMenu" type="Node2D"]
+script = ExtResource("1_vft5f")
+
+[node name="Stage" parent="." instance=ExtResource("2_l24p0")]
+
+[node name="character" type="Node2D" parent="."]
+position = Vector2(475, 348)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="black_box" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 813.0
+offset_top = 15.0
+offset_right = 1203.0
+offset_bottom = 464.0
+
+[node name="characters" type="OptionButton" parent="CanvasLayer"]
+offset_left = 816.0
+offset_top = 46.0
+offset_right = 964.0
+offset_bottom = 66.0
+
+[node name="characters_text" type="Label" parent="CanvasLayer"]
+offset_left = 816.0
+offset_top = 24.0
+offset_right = 893.0
+offset_bottom = 47.0
+text = "Character:"
+
+[node name="flipX" type="CheckBox" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 815.0
+offset_top = 87.0
+offset_right = 890.0
+offset_bottom = 118.0
+text = "flip X?"
+
+[node name="flipY" type="CheckBox" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 904.0
+offset_top = 87.0
+offset_right = 979.0
+offset_bottom = 118.0
+text = "flip Y?"
+
+[node name="loopAnim" type="CheckBox" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 994.0
+offset_top = 87.0
+offset_right = 1107.0
+offset_bottom = 118.0
+text = "loop anim?"
+
+[node name="is_player" type="CheckBox" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 815.0
+offset_top = 195.0
+offset_right = 929.0
+offset_bottom = 226.0
+text = "is a player?"
+
+[node name="animated_icon" type="CheckBox" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 943.0
+offset_top = 198.0
+offset_right = 967.0
+offset_bottom = 222.0
+text = "animated icon?
+"
+
+[node name="icon_text" type="LineEdit" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 819.0
+offset_top = 146.0
+offset_right = 979.0
+offset_bottom = 177.0
+
+[node name="color_text" type="LineEdit" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 1005.0
+offset_top = 146.0
+offset_right = 1165.0
+offset_bottom = 177.0
+placeholder_text = "example: #00e8ff"
+
+[node name="icon_label" type="Label" parent="CanvasLayer"]
+offset_left = 819.0
+offset_top = 125.0
+offset_right = 896.0
+offset_bottom = 148.0
+text = "icon:"
+
+[node name="color_label" type="Label" parent="CanvasLayer"]
+offset_left = 1005.0
+offset_top = 125.0
+offset_right = 1133.0
+offset_bottom = 148.0
+text = "health bar color:"
+
+[node name="current_anim" type="Label" parent="CanvasLayer"]
+offset_left = 826.0
+offset_top = 422.0
+offset_right = 903.0
+offset_bottom = 445.0
+text = "animation: idle dance"
+
+[node name="save_json" type="Button" parent="CanvasLayer"]
+offset_left = 819.0
+offset_top = 249.0
+offset_right = 913.0
+offset_bottom = 280.0
+text = "save json"
+
+[node name="x_scale" type="SpinBox" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 991.0
+offset_top = 249.0
+offset_right = 1077.56
+offset_bottom = 280.0
+value = 1.0
+
+[node name="x_scale_label" type="Label" parent="CanvasLayer"]
+offset_left = 931.0
+offset_top = 254.0
+offset_right = 1059.0
+offset_bottom = 277.0
+text = "X scale:"
+
+[node name="y_scale" type="SpinBox" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 991.0
+offset_top = 294.0
+offset_right = 1077.56
+offset_bottom = 325.0
+value = 1.0
+
+[node name="y_scale_label" type="Label" parent="CanvasLayer"]
+offset_left = 931.0
+offset_top = 300.0
+offset_right = 1059.0
+offset_bottom = 323.0
+text = "Y scale:"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(641, 360)
+zoom = Vector2(0.715, 0.715)
+
+[node name="FileDialog" type="FileDialog" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/flipX" to="." method="_on_flip_x_pressed"]
+[connection signal="pressed" from="CanvasLayer/flipY" to="." method="_on_flip_y_pressed"]
+[connection signal="pressed" from="CanvasLayer/loopAnim" to="." method="_on_flip_x_pressed"]
+[connection signal="pressed" from="CanvasLayer/save_json" to="." method="save_file"]
+[connection signal="value_changed" from="CanvasLayer/x_scale" to="." method="_on_x_scale_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/y_scale" to="." method="_on_y_scale_value_changed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

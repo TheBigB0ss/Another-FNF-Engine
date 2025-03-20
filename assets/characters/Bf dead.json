@@ -1,0 +1,38 @@
+{
+	"FlipX": false,
+	"FlipY": false,
+	"HealthBarColor": "",
+	"HealthIcon": "",
+	"Poses": [
+		{
+			"Anim": "dead",
+			"Name": "BF dies",
+			"Offset": [
+				0,
+				20
+			]
+		},
+		{
+			"Anim": "dead loop",
+			"Name": "BF Dead Loop",
+			"Offset": [
+				0,
+				23
+			]
+		},
+		{
+			"Anim": "dead confirm",
+			"Name": "BF Dead confirm",
+			"Offset": [
+				0,
+				-9
+			]
+		}
+	],
+	"isPlayer": false,
+	"scale": [
+		1.0,
+		1.0
+	],
+	"LoopAnim": false
+}

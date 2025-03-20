@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://cec563mjypmk5"]
+
+[ext_resource type="Script" uid="uid://sagxl40s3g7a" path="res://source/stage/mall.gd" id="1_c7h7o"]
+[ext_resource type="Texture2D" uid="uid://bcq4mw7atgycn" path="res://assets/stages/week5/mall/bgWalls.png" id="2_60vdn"]
+[ext_resource type="SpriteFrames" uid="uid://cnrmeqnqbjuy" path="res://assets/stages/week5/mall/upperBop.res" id="3_bsu5w"]
+[ext_resource type="Texture2D" uid="uid://sscrjkd3cgn4" path="res://assets/stages/week5/mall/bgEscalator.png" id="4_o18wg"]
+[ext_resource type="Texture2D" uid="uid://c3jnjrw8qsvim" path="res://assets/stages/week5/mall/christmasTree.png" id="5_mgo3f"]
+[ext_resource type="SpriteFrames" uid="uid://da8ks03e8a755" path="res://assets/stages/week5/mall/bottomBop.res" id="6_8r2oa"]
+[ext_resource type="Texture2D" uid="uid://djc31ia0m7ye4" path="res://assets/stages/week1/soaked.png" id="6_uvytj"]
+[ext_resource type="Texture2D" uid="uid://6boxrwf05n3q" path="res://assets/stages/week5/mall/fgSnow.png" id="7_mpirr"]
+[ext_resource type="SpriteFrames" uid="uid://cmus834om80hk" path="res://assets/stages/week5/mall/santa.res" id="8_7xf0m"]
+
+[node name="Mall" type="Node2D"]
+script = ExtResource("1_c7h7o")
+
+[node name="mallBG" type="Sprite2D" parent="."]
+position = Vector2(386, 13)
+texture = ExtResource("2_60vdn")
+
+[node name="upperBop" type="AnimatedSprite2D" parent="."]
+position = Vector2(502, -159)
+sprite_frames = ExtResource("3_bsu5w")
+animation = &"Upper Crowd Bob"
+frame = 2
+frame_progress = 0.359332
+
+[node name="backBG" type="Sprite2D" parent="."]
+position = Vector2(221, 43)
+texture = ExtResource("4_o18wg")
+
+[node name="treeBG" type="Sprite2D" parent="."]
+position = Vector2(499, 0)
+texture = ExtResource("5_mgo3f")
+
+[node name="soaked" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.113725)
+position = Vector2(893, 185)
+texture = ExtResource("6_uvytj")
+
+[node name="bottomBop" type="AnimatedSprite2D" parent="."]
+position = Vector2(497.75, 300)
+scale = Vector2(1.00329, 1)
+sprite_frames = ExtResource("6_8r2oa")
+animation = &"Bottom Level Boppers Idle"
+frame = 3
+frame_progress = 0.923886
+
+[node name="snowBG" type="Sprite2D" parent="."]
+position = Vector2(563, 694)
+scale = Vector2(1, 1.5873)
+texture = ExtResource("7_mpirr")
+
+[node name="Santa" type="AnimatedSprite2D" parent="."]
+position = Vector2(-656, 280)
+sprite_frames = ExtResource("8_7xf0m")
+animation = &"santa idle in fear"
+frame = 10
+frame_progress = 0.166462

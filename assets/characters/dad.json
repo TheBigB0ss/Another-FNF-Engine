@@ -1,0 +1,55 @@
+{
+	"FlipX": false,
+	"FlipY": false,
+	"HealthBarColor": "#75369e",
+	"HealthIcon": "dad",
+	"LoopAnim": false,
+	"AnimatedIcon": false,
+	"Poses": [
+		{
+			"Anim": "idle dance",
+			"Name": "Dad idle dance",
+			"Offset": [
+				-75,
+				-90
+			]
+		},
+		{
+			"Anim": "singLeft",
+			"Name": "Dad Sing Note LEFT",
+			"Offset": [
+				-85,
+				-90
+			]
+		},
+		{
+			"Anim": "singDown",
+			"Name": "Dad Sing Note DOWN",
+			"Offset": [
+				-55,
+				-70
+			]
+		},
+		{
+			"Anim": "singUp",
+			"Name": "Dad Sing Note UP",
+			"Offset": [
+				-75,
+				-110
+			]
+		},
+		{
+			"Anim": "singRight",
+			"Name": "Dad Sing Note RIGHT",
+			"Offset": [
+				-55,
+				-100
+			]
+		}
+	],
+	"isPlayer": false,
+	"scale": [
+		1.0,
+		1.0
+	]
+}

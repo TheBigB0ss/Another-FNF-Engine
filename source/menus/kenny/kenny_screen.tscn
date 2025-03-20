@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://dquyvsxshfcio"]
+
+[ext_resource type="Script" uid="uid://c4f1rqanhw0lf" path="res://source/menus/kenny/kenny_screen.gd" id="1_2kk4u"]
+[ext_resource type="Texture2D" uid="uid://cfxhxhcgx15vh" path="res://assets/images/Kenny.png" id="1_nqxjx"]
+[ext_resource type="SpriteFrames" uid="uid://usp0hvsh8288" path="res://assets/images/fire.res" id="3_pww0y"]
+[ext_resource type="FontFile" uid="uid://d1v51eqb2c10v" path="res://assets/fonts/vcr.ttf" id="4_6ycbt"]
+[ext_resource type="AudioStream" uid="uid://cir5o87cvy0nv" path="res://assets/music/kenny_happy_song.ogg" id="5_aqpgg"]
+
+[node name="KennyScreen" type="Node2D"]
+script = ExtResource("1_2kk4u")
+
+[node name="bg" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="bg"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="fire" type="AnimatedSprite2D" parent="bg"]
+modulate = Color(1, 1, 1, 0.580392)
+position = Vector2(644, 555)
+scale = Vector2(2.59036, 0.900804)
+sprite_frames = ExtResource("3_pww0y")
+animation = &"fire"
+autoplay = "fire"
+frame = 13
+frame_progress = 0.683863
+
+[node name="ColorRect2" type="ColorRect" parent="bg"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 390.0
+color = Color(0, 0, 0, 1)
+
+[node name="madKenny" type="Sprite2D" parent="bg"]
+modulate = Color(0.466667, 0, 0.0117647, 0)
+self_modulate = Color(1, 1, 1, 0.529412)
+position = Vector2(641, 359)
+scale = Vector2(6.63212, 2.76629)
+texture = ExtResource("1_nqxjx")
+
+[node name="suffer_text" type="Label" parent="."]
+offset_left = 46.0
+offset_top = 294.0
+offset_right = 1216.0
+offset_bottom = 352.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_6ycbt")
+theme_override_font_sizes/font_size = 65
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="kenny happy song" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_aqpgg")
+volume_db = 1.0
+pitch_scale = 0.9
+autoplay = true
+attenuation = 0.698132
+parameters/looping = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

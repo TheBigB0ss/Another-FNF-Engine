@@ -1,0 +1,128 @@
+[gd_scene load_steps=17 format=3 uid="uid://b3n0fts4j8aar"]
+
+[ext_resource type="Texture2D" uid="uid://bnukwjykme7g6" path="res://assets/images/weekCharacters/Menu_Pico.png" id="2_rhu3r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo01x"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(4, 4, 205, 217)
+margin = Rect2(0, 6, 0, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p4m0"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(4, 4, 205, 217)
+margin = Rect2(0, 6, 0, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u76j0"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(209, 4, 208, 220)
+margin = Rect2(0, 3, 0, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hvmt"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(209, 4, 208, 220)
+margin = Rect2(0, 3, 0, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq40p"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(417, 4, 212, 221)
+margin = Rect2(1, 3, 1, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etu0n"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(629, 4, 210, 221)
+margin = Rect2(3, 3, 3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_li6my"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(4, 225, 210, 223)
+margin = Rect2(3, 1, 3, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kog8b"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(214, 225, 209, 223)
+margin = Rect2(4, 1, 4, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0akj"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(423, 225, 209, 224)
+margin = Rect2(4, 0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8rtx"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(423, 225, 209, 224)
+margin = Rect2(4, 0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2epri"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(423, 225, 209, 224)
+margin = Rect2(4, 0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v22ka"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(423, 225, 209, 224)
+margin = Rect2(4, 0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21oke"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(423, 225, 209, 224)
+margin = Rect2(4, 0, 4, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj8kv"]
+atlas = ExtResource("2_rhu3r")
+region = Rect2(423, 225, 209, 224)
+margin = Rect2(4, 0, 4, 0)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llf0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo01x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p4m0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u76j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hvmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq40p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etu0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_li6my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kog8b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0akj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8rtx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2epri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v22ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21oke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj8kv")
+}],
+"loop": true,
+"name": &"M Pico Idle",
+"speed": 25.0
+}]
+
+[node name="menu_pico" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_llf0v")
+animation = &"M Pico Idle"
+autoplay = "M Pico Idle"

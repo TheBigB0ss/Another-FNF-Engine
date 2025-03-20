@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://8ln1gx0yqr54"]
+
+[ext_resource type="Texture2D" uid="uid://hufrc0ajnvnp" path="res://assets/images/portraits/senpai/senpaiPortrait.png" id="2_m74g3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oceyk"]
+atlas = ExtResource("2_m74g3")
+region = Rect2(0, 0, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxwcf"]
+atlas = ExtResource("2_m74g3")
+region = Rect2(259, 0, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaxah"]
+atlas = ExtResource("2_m74g3")
+region = Rect2(259, 0, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msfhp"]
+atlas = ExtResource("2_m74g3")
+region = Rect2(0, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eeal"]
+atlas = ExtResource("2_m74g3")
+region = Rect2(0, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4ro5"]
+atlas = ExtResource("2_m74g3")
+region = Rect2(259, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnrhd"]
+atlas = ExtResource("2_m74g3")
+region = Rect2(259, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wylas"]
+atlas = ExtResource("2_m74g3")
+region = Rect2(259, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htuwf"]
+atlas = ExtResource("2_m74g3")
+region = Rect2(259, 155, 249, 145)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1atd2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oceyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxwcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaxah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msfhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eeal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4ro5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnrhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wylas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htuwf")
+}],
+"loop": false,
+"name": &"Senpai Portrait Enter instance 1",
+"speed": 21.0
+}]
+
+[node name="senpaiPortrait" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(5.4, 5.4)
+sprite_frames = SubResource("SpriteFrames_1atd2")
+animation = &"Senpai Portrait Enter instance 1"

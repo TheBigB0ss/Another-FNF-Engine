@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvqhapt15k07"]
+
+[ext_resource type="Script" uid="uid://t20cy1m4d2gm" path="res://source/stage/limo.gd" id="1_acbwd"]
+[ext_resource type="Texture2D" uid="uid://sjanir7wrv4m" path="res://assets/stages/week4/limoSunset.png" id="2_tf17l"]
+[ext_resource type="SpriteFrames" uid="uid://d350an5h7jc6x" path="res://assets/stages/week4/limo.res" id="3_qmx48"]
+[ext_resource type="SpriteFrames" uid="uid://mdm0hsh0vur5" path="res://assets/stages/week4/driver.res" id="4_oh4h2"]
+[ext_resource type="Texture2D" uid="uid://cpua24lk0wgdb" path="res://assets/stages/week4/fastCarLol.png" id="5_eao4d"]
+[ext_resource type="SpriteFrames" uid="uid://bpq0uuocd7ay6" path="res://assets/stages/week4/dancer.res" id="6_a4wb2"]
+[ext_resource type="Texture2D" uid="uid://djc31ia0m7ye4" path="res://assets/stages/week1/soaked.png" id="6_ipr0k"]
+
+[node name="Limo" type="Node2D"]
+script = ExtResource("1_acbwd")
+
+[node name="skyBg" type="Sprite2D" parent="."]
+position = Vector2(860, 114)
+texture = ExtResource("2_tf17l")
+
+[node name="LimoBg" type="AnimatedSprite2D" parent="."]
+position = Vector2(946, 228)
+sprite_frames = ExtResource("3_qmx48")
+animation = &"background limo pink"
+frame = 3
+frame_progress = 0.163681
+
+[node name="Limo" type="AnimatedSprite2D" parent="."]
+position = Vector2(952, 442)
+sprite_frames = ExtResource("4_oh4h2")
+animation = &"Limo stage"
+frame = 3
+frame_progress = 0.339996
+
+[node name="car" type="Sprite2D" parent="."]
+position = Vector2(3096, 551)
+texture = ExtResource("5_eao4d")
+
+[node name="soaked" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.113725)
+position = Vector2(1602, -53)
+texture = ExtResource("6_ipr0k")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 25.0
+offset_top = -15.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dancer1" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(438, -124)
+sprite_frames = ExtResource("6_a4wb2")
+animation = &"bg dancer sketch PINK"
+frame = 19
+frame_progress = 0.20623
+
+[node name="Dancer2" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(847, -124)
+sprite_frames = ExtResource("6_a4wb2")
+animation = &"bg dancer sketch PINK"
+frame = 23
+frame_progress = 0.91822
+
+[node name="Dancer3" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(1260, -124)
+sprite_frames = ExtResource("6_a4wb2")
+animation = &"bg dancer sketch PINK"
+frame = 19
+frame_progress = 0.10149
+
+[node name="Dancer4" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(1671, -121)
+sprite_frames = ExtResource("6_a4wb2")
+animation = &"bg dancer sketch PINK"
+frame = 18
+frame_progress = 0.420897

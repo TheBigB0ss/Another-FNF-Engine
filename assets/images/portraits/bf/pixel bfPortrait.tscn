@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://demhhy01snc75"]
+
+[ext_resource type="Texture2D" uid="uid://bvm1o1sw2aqcs" path="res://assets/images/portraits/bf/bfPortrait.png" id="2_lk7at"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feve5"]
+atlas = ExtResource("2_lk7at")
+region = Rect2(0, 0, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i7qq"]
+atlas = ExtResource("2_lk7at")
+region = Rect2(259, 0, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f74nl"]
+atlas = ExtResource("2_lk7at")
+region = Rect2(259, 0, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2thwv"]
+atlas = ExtResource("2_lk7at")
+region = Rect2(0, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb0sn"]
+atlas = ExtResource("2_lk7at")
+region = Rect2(0, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1utpi"]
+atlas = ExtResource("2_lk7at")
+region = Rect2(259, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj8kr"]
+atlas = ExtResource("2_lk7at")
+region = Rect2(259, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6yh0"]
+atlas = ExtResource("2_lk7at")
+region = Rect2(259, 155, 249, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s50bh"]
+atlas = ExtResource("2_lk7at")
+region = Rect2(259, 155, 249, 145)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6btm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feve5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i7qq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f74nl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2thwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb0sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1utpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj8kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6yh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s50bh")
+}],
+"loop": false,
+"name": &"Boyfriend portrait enter instance 1",
+"speed": 21.0
+}]
+
+[node name="pixel bfPortrait" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(5.4, 5.4)
+sprite_frames = SubResource("SpriteFrames_p6btm")
+animation = &"Boyfriend portrait enter instance 1"

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://3aw7homfuxmk"]
+
+[ext_resource type="SpriteFrames" uid="uid://5nl2q3v2hwlc" path="res://assets/images/mainMenu/story mode.res" id="1_oq7ig"]
+
+[node name="story_mode" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_oq7ig")
+animation = &"story_mode white"

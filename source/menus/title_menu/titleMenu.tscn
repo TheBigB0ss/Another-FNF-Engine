@@ -1,0 +1,186 @@
+[gd_scene load_steps=23 format=3 uid="uid://dsjwndbd6t4c1"]
+
+[ext_resource type="Texture2D" uid="uid://ccj3ms8w2db3p" path="res://assets/images/newgrounds_logo.png" id="1_3acq1"]
+[ext_resource type="Script" uid="uid://cj3yafaq28n3x" path="res://source/menus/title_menu/titleMenu.gd" id="1_cn02s"]
+[ext_resource type="Texture2D" uid="uid://dskme0en54wg1" path="res://assets/images/ameigos_logos/ameigos_bg.png" id="2_42olo"]
+[ext_resource type="Texture2D" uid="uid://m43h3y2mx6rr" path="res://assets/images/logoBumpin.png" id="2_imjky"]
+[ext_resource type="SpriteFrames" uid="uid://bq82f0i5if5d2" path="res://assets/images/gfDanceTitle.res" id="3_usl7a"]
+[ext_resource type="SpriteFrames" uid="uid://b3p6yxrwy0afp" path="res://assets/images/titleEnter.res" id="4_ch40q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smr0h"]
+atlas = ExtResource("2_imjky")
+region = Rect2(0, 0, 894, 670)
+margin = Rect2(22, 16, 22, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbv8p"]
+atlas = ExtResource("2_imjky")
+region = Rect2(904, 0, 939, 703)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywajs"]
+atlas = ExtResource("2_imjky")
+region = Rect2(904, 0, 939, 703)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at5l5"]
+atlas = ExtResource("2_imjky")
+region = Rect2(0, 713, 911, 683)
+margin = Rect2(14, 10, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opcfh"]
+atlas = ExtResource("2_imjky")
+region = Rect2(0, 713, 911, 683)
+margin = Rect2(14, 10, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05n6x"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff0nc"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7idy"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0kc3"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy1b4"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh6kn"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjdw2"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gebgg"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmhk2"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foem4"]
+atlas = ExtResource("2_imjky")
+region = Rect2(921, 713, 905, 679)
+margin = Rect2(17, 12, 17, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1q4nh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smr0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbv8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywajs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at5l5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opcfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05n6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff0nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7idy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0kc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy1b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh6kn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjdw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gebgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmhk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foem4")
+}],
+"loop": true,
+"name": &"logo bumpin",
+"speed": 22.0
+}]
+
+[node name="TitleMenu" type="Node2D"]
+script = ExtResource("1_cn02s")
+
+[node name="Bg" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="ameigos_bg" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.207843)
+position = Vector2(640, 360)
+scale = Vector2(0.625, 0.510638)
+texture = ExtResource("2_42olo")
+
+[node name="tiltle stuff" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="logo" type="AnimatedSprite2D" parent="tiltle stuff"]
+position = Vector2(371, 294)
+scale = Vector2(1.00206, 0.991317)
+sprite_frames = SubResource("SpriteFrames_1q4nh")
+animation = &"logo bumpin"
+frame = 7
+frame_progress = 0.416421
+
+[node name="Gf" type="AnimatedSprite2D" parent="tiltle stuff"]
+position = Vector2(942, 408)
+scale = Vector2(0.9, 0.9)
+sprite_frames = ExtResource("3_usl7a")
+animation = &"dance_left"
+
+[node name="title" type="AnimatedSprite2D" parent="tiltle stuff"]
+position = Vector2(834, 668)
+sprite_frames = ExtResource("4_ch40q")
+animation = &"Press Enter to Begin"
+
+[node name="NG Logo" type="Sprite2D" parent="tiltle stuff"]
+visible = false
+position = Vector2(612, 541)
+texture = ExtResource("1_3acq1")
+
+[node name="alphabet_grp" type="Node2D" parent="."]
+position = Vector2(60, 130)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)

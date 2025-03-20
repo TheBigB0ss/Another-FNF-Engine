@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlcm2bge2mla2"]
+
+[ext_resource type="Texture2D" uid="uid://d2kank7qfpaqy" path="res://assets/images/portraits/funny/mario/mario.png" id="1_yk6ha"]
+
+[node name="Mario" type="Sprite2D"]
+texture = ExtResource("1_yk6ha")

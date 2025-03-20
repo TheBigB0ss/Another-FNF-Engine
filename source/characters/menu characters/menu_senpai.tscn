@@ -1,0 +1,114 @@
+[gd_scene load_steps=17 format=3 uid="uid://cgry5rw7bvylg"]
+
+[ext_resource type="Texture2D" uid="uid://k11qxtcoyfbl" path="res://assets/images/weekCharacters/Menu_Senpai.png" id="2_2d7uy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yhl4"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(4, 4, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fagps"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(4, 4, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ey852"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(341, 4, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjf86"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(341, 4, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvr0r"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(678, 4, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bret"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(678, 4, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd18w"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(4, 292, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxcn5"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(4, 292, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d68vb"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(341, 292, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c3qb"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(341, 292, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5272m"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(341, 292, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vglwt"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(341, 292, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd287"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(341, 292, 337, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orpjd"]
+atlas = ExtResource("2_2d7uy")
+region = Rect2(341, 292, 337, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_imtm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yhl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fagps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ey852")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjf86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvr0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bret")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd18w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxcn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d68vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c3qb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5272m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vglwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd287")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orpjd")
+}],
+"loop": true,
+"name": &"M Senpai Idle",
+"speed": 25.0
+}]
+
+[node name="menu_senpai" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_imtm5")
+animation = &"M Senpai Idle"
+autoplay = "M Senpai Idle"

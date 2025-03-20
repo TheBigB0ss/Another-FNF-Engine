@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://de51xg7o8kadi"]
+
+[ext_resource type="SpriteFrames" uid="uid://dawpqb8obidjd" path="res://assets/images/characters/bfDEAD.res" id="1_c4j3g"]
+[ext_resource type="Script" uid="uid://bjomsg0ihnqon" path="res://source/characters/characters_scripts/bf_dead.gd" id="1_q874k"]
+
+[node name="Bf dead" type="Node2D"]
+script = ExtResource("1_q874k")
+json_path = "Bf dead"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="character" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_c4j3g")
+animation = &"BF dies"
+frame = 54
+frame_progress = 0.231591

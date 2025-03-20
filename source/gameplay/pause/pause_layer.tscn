@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2lkjdn511dpc"]
+
+[ext_resource type="Script" uid="uid://tivysqrgcflc" path="res://source/gameplay/pause/pause_layer.gd" id="1_txscq"]
+[ext_resource type="FontFile" uid="uid://d1v51eqb2c10v" path="res://assets/fonts/vcr.ttf" id="2_hyh4q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_25oa3"]
+font = ExtResource("2_hyh4q")
+font_size = 570
+shadow_size = 45
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="PauseLayer" type="CanvasLayer"]
+script = ExtResource("1_txscq")
+
+[node name="panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bg" type="ColorRect" parent="panel"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0.47451)
+
+[node name="song_text" type="Label" parent="panel"]
+layout_mode = 0
+offset_left = 1074.0
+offset_top = 5.0
+offset_right = 2744.0
+offset_bottom = 506.0
+scale = Vector2(0.065, 0.06)
+text = "Song:"
+label_settings = SubResource("LabelSettings_25oa3")
+
+[node name="difficulty_text" type="Label" parent="panel"]
+layout_mode = 0
+offset_left = 1074.0
+offset_top = 48.0
+offset_right = 4748.0
+offset_bottom = 549.0
+scale = Vector2(0.055, 0.06)
+text = "Difficulty:"
+label_settings = SubResource("LabelSettings_25oa3")
+
+[node name="deaths" type="Label" parent="panel"]
+layout_mode = 0
+offset_left = 1074.0
+offset_top = 93.0
+offset_right = 4748.0
+offset_bottom = 594.0
+scale = Vector2(0.055, 0.06)
+text = "Deaths:"
+label_settings = SubResource("LabelSettings_25oa3")
+
+[node name="options_grp" type="Node2D" parent="panel"]
+position = Vector2(125, 230)

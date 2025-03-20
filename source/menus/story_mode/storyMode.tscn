@@ -1,0 +1,156 @@
+[gd_scene load_steps=6 format=3 uid="uid://f37p03ir2jr5"]
+
+[ext_resource type="Script" uid="uid://0q0b2um80msy" path="res://source/menus/story_mode/storyMode.gd" id="1_bpcgf"]
+[ext_resource type="SpriteFrames" uid="uid://dcuob18cf8qsn" path="res://assets/images/menu_assets.res" id="2_k61m0"]
+[ext_resource type="FontFile" uid="uid://d1v51eqb2c10v" path="res://assets/fonts/vcr.ttf" id="3_1ftmq"]
+[ext_resource type="Texture2D" uid="uid://y2jex55553nx" path="res://assets/images/Menu_Tracks.png" id="4_0icla"]
+[ext_resource type="Texture2D" uid="uid://dyx812j1nrcuc" path="res://assets/images/lockerIcon.png" id="5_30ima"]
+
+[node name="StoryMode" type="Node2D"]
+script = ExtResource("1_bpcgf")
+
+[node name="bgs" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="bg" type="ColorRect" parent="bgs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.075
+anchor_right = 3.125
+anchor_bottom = 1.6
+offset_left = -3.0
+offset_right = 1155.0
+offset_bottom = 656.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WeekSprite" type="Node2D" parent="bgs"]
+position = Vector2(585, 470)
+
+[node name="ColorRect" type="ColorRect" parent="bgs"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = -0.2
+anchor_right = 3.15
+anchor_bottom = 0.75
+offset_left = -2.0
+offset_top = 64.0
+offset_right = 1154.0
+offset_bottom = 391.0
+color = Color(1, 0.839551, 0.365285, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="bgs"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(32.0001, 1.4003)
+color = Color(0, 0, 0, 1)
+
+[node name="arrows" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 120.0
+offset_right = 160.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftArrow" type="AnimatedSprite2D" parent="arrows"]
+position = Vector2(763, 480)
+sprite_frames = ExtResource("2_k61m0")
+animation = &"arrow left"
+
+[node name="RightArrow" type="AnimatedSprite2D" parent="arrows"]
+position = Vector2(1125, 480)
+sprite_frames = ExtResource("2_k61m0")
+animation = &"arrow right"
+
+[node name="characters" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="characterPosition1" type="Node2D" parent="characters"]
+position = Vector2(614, 252)
+
+[node name="characterPosition2" type="Node2D" parent="characters"]
+position = Vector2(1043, 254)
+
+[node name="characterPosition3" type="Node2D" parent="characters"]
+position = Vector2(197, 238)
+
+[node name="texts" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 68.0
+offset_right = 108.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="songs" type="Label" parent="texts"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -4.075
+anchor_top = -0.475
+anchor_right = 60.7
+anchor_bottom = 47.3
+offset_left = 187.0
+offset_top = 514.0
+offset_right = 233.0
+offset_bottom = 589.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0.913725, 0.415686, 0.52549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1ftmq")
+theme_override_font_sizes/font_size = 750
+text = "song 1
+song 2
+song 3"
+metadata/_edit_use_anchors_ = true
+
+[node name="weekName" type="Label" parent="texts"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.2
+anchor_top = -0.1
+anchor_right = 106.65
+anchor_bottom = 16.475
+offset_left = 757.0
+offset_top = 16.0
+offset_right = 852.0
+offset_bottom = 39.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1ftmq")
+theme_override_font_sizes/font_size = 780
+text = "Week Name"
+metadata/_edit_use_anchors_ = true
+
+[node name="score" type="Label" parent="texts"]
+layout_mode = 0
+offset_left = -63.0
+offset_top = 10.0
+offset_right = 169.0
+offset_bottom = 42.0
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("3_1ftmq")
+theme_override_font_sizes/font_size = 780
+text = "Week Score:"
+
+[node name="tracks" type="Sprite2D" parent="."]
+position = Vector2(177, 473)
+texture = ExtResource("4_0icla")
+
+[node name="lock" type="Sprite2D" parent="."]
+position = Vector2(968, 478)
+texture = ExtResource("5_30ima")
+
+[node name="difficulties" type="Sprite2D" parent="."]
+position = Vector2(1062, 480)

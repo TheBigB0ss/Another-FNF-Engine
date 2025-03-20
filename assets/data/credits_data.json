@@ -1,0 +1,59 @@
+{
+	"dev_info":[
+		{
+			"team": "Another FNF Engine made in Godot",
+			"name": "Big Boss",
+			"role": "main coder and engine creator :)",
+			"icon": "big_boss",
+			"social midia": {
+				"youtube": "https://www.youtube.com/channel/UCLcCR_ZaD0W1crxT5yH_FFQ",
+				"twitter": "https://x.com/TheBigBoss050"
+			},
+			"bg_color": "#B3B6B7"
+		},
+		{
+			"team": "Another FNF Engine made in Godot",
+			"name": "boboa",
+			"role": "artist",
+			"icon": "boboa",
+			"social midia": {
+				"youtube": "https://www.youtube.com/channel/UCVXmTYkO9XrKz69Lgd8uALA",
+				"bluesky": "https://bsky.app/profile/bobolinhasdebahai.bsky.social",
+				"twitter": "https://x.com/bobolinhas9"
+			},
+			"bg_color": "#4E256E"
+		},
+		{
+			"team": "Another FNF Engine made in Godot",
+			"name": "626",
+			"role": "artist",
+			"icon": "626",
+			"social midia": {
+				"twitter": "https://x.com/O_626"
+			},
+			"bg_color": "#b25918"
+		},
+		{
+			"team": "Another FNF Engine made in Godot",
+			"name": "Yupam",
+			"role": "Composer",
+			"icon": "yupam",
+			"social midia": {
+				"youtube": "https://www.youtube.com/channel/UCgrVlJBKDSc8fUWy7S_PV1A",
+				"bluesky": "https://bsky.app/profile/yupamlovestrucks.bsky.social"
+			},
+			"bg_color": "#00eeffb1"
+		},
+		{
+			"team": "Another FNF Engine made in Godot",
+			"name": "synthary",
+			"role": "Composer",
+			"icon": "sariaicon_fnf",
+			"social midia": {
+				"youtube": "https://www.youtube.com/channel/UCbh-CbgAVHBQdpeJ4UUCQNw",
+				"twitter": "https://x.com/lopessaria_"
+			},
+			"bg_color": "#ffc700"
+		}
+	]
+}

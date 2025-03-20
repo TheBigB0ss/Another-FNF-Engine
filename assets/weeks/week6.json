@@ -1,0 +1,27 @@
+{
+	"songs":[
+		[
+			"senpai",
+			"senpai-pixel",
+			[1.0, 0.671, 0.337]
+		],
+		[
+			"roses",
+			"senpai-pixel",
+			[1.0, 0.671, 0.337]
+		],
+		[
+			"thorns",
+			"spirit-pixel",
+			[1.0, 0.0, 0.278]
+		]
+	],
+	"hideFromFreeplay": false,
+	"hideFromStoryMode": false,
+	"isLocked": false,
+	"weekName": "week6",
+	"lastWeek": "",
+	"weekDescription": "hating simulator ft. moawling",
+	"weekDifficulties": [],
+	"weekCharacters": ["senpai", "bf", "gf"]
+}
