@@ -141,9 +141,6 @@ func _process(delta):
 		
 	if is_pressing:
 		sustainLenght -= (delta*1000);
-		if sustainLenght <= 15:
-			sustainLenght = 0;
-			
 		sustainLenght = max(sustainLenght, 0);
 		
 		if sustainLenght <= 0 && note_line != null && note_end != null:
@@ -161,9 +158,6 @@ func _process(delta):
 			
 	if Conductor.getSongTime > 390 + songPos && sustainLenght > 0 && !is_pressing:
 		sustainLenght -= (delta*1000);
-		if sustainLenght <= 15:
-			sustainLenght = 0;
-			
 		sustainLenght = max(sustainLenght, 0);
 		
 		if sustainLenght <= 0 && note_line != null && note_end != null:
