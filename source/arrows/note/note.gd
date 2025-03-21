@@ -144,7 +144,6 @@ func _process(delta):
 		if sustainLenght < 23:
 			sustainLenght = 0;
 		sustainLenght = max(sustainLenght, 0);
-		print(sustainLenght)
 		
 		if sustainLenght <= 0 && note_line != null && note_end != null:
 			note_line.hide();
@@ -171,7 +170,7 @@ func _process(delta):
 			
 		if note_line != null:
 			note_line.set_point_position(1, Vector2(0, sustainLenght));
-			#note_end.position.y = sustainLenght + note_end.texture.get_height()-7 if !SongData.chartData["song"]["isPixelStage"] else sustainLenght + note_end.get_rect().size.y * 1;
+			note_end.position.y = sustainLenght + note_end.get_rect().size.y/Conductor.songSpeed
 			
 func pressed():
 	if sustainLenght <= 0:

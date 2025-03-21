@@ -383,12 +383,21 @@ var strumY = null;
 var start_song = false;
 func _process(delta: float) -> void:
 	if start_song:
-		Conductor.getSongTime += (delta*1000)
-		
+		if !pause_menu.paused:
+			Conductor.getSongTime += (delta*1000)
+			inst.stream_paused = false;
+			voices.stream_paused = false;
+			
+		if !Conductor.getSongTime < 0 && Conductor.getSongTime != inst.get_playback_position() * 1000:
+			if inst.stream.get_length() >= voices.stream.get_length():
+				Conductor.getSongTime = inst.get_playback_position() * 1000;
+				
+			if voices.stream.get_length() > inst.stream.get_length():
+				Conductor.getSongTime = voices.get_playback_position() * 1000;
+				
 	healthBar.value = lerp(healthBar.value, health, 0.40);
 	sectionCamera.zoom = lerp(sectionCamera.zoom, Vector2(0.8, 0.8), 0.09) if curStage != "school" else lerp(sectionCamera.zoom, Vector2(1.0, 1.0), 0.09)
 	scoreText.scale = lerp(scoreText.scale, Vector2(0.049, 0.049), 0.08);
-	
 	
 	if animatedIconP1.get_child_count() > 0:
 		animatedIconP1.get_child(0).scale = lerp(animatedIconP1.get_child(0).scale, Vector2(1.0, 1.0), 0.08);
@@ -961,6 +970,7 @@ func _input(ev):
 			if (ev.keycode in [KEY_ENTER] || ev.keycode in [KEY_KP_ENTER]) && can_pause:
 				pause_menu.can_use = true;
 				pause_menu.visible = true;
+				
 				pause_menu._paused();
 				Discord.update_discord_info("pause", "Paused");
 				

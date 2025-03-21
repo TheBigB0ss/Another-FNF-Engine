@@ -47,9 +47,9 @@ func _ready():
 	song_text.position.x -= len(SongData.chartData["song"]["song"])*17;
 	difficulty_text.position.x -= len(Global.diffsShit)*24;
 	
-	change_opt(0)
-	is_paused = true
-	process_mode = 2
+	change_opt(0);
+	is_paused = true;
+	process_mode = 2;
 	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") && !is_paused:
@@ -91,9 +91,12 @@ func _choice_pause_opts():
 			
 		"RESTART":
 			_resume();
+			
 			get_tree().current_scene.inst.stop();
 			get_tree().current_scene.voices.stop();
+			
 			Global.reloadScene(true, false, 3.5);
+			
 			pause_panel.hide();
 			can_use = false;
 			
@@ -103,12 +106,16 @@ func _choice_pause_opts():
 		"EXIT TO MENU":
 			Global.is_on_chartMode = false;
 			Global.death_count = 0;
+			
 			paused = false;
 			pause_panel.visible = false;
+			
 			get_tree().paused = false;
 			get_tree().current_scene.inst.stop();
 			get_tree().current_scene.voices.stop();
+			
 			Global.changeScene("menus/story_mode/storyMode" if Global.isStoryMode else "menus/freeplay/freeplay_menu");
+			
 			MusicManager._play_music("freakyMenu", true, true);
 			pause_panel.hide();
 			can_use = false;
@@ -116,8 +123,10 @@ func _choice_pause_opts():
 		"EXIT CHART MODE":
 			Global.is_on_chartMode = false;
 			_resume();
+			
 			get_tree().current_scene.inst.stop();
 			get_tree().current_scene.voices.stop();
+			
 			Global.reloadScene(true, false, 3.5);
 			
 			var default_chart = null;

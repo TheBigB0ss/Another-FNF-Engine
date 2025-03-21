@@ -1,11 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://b0iyndk5ikcxf"]
+[gd_scene load_steps=11 format=3 uid="uid://b0iyndk5ikcxf"]
 
 [ext_resource type="Texture2D" uid="uid://b7e6h73av0g1y" path="res://assets/stages/week6/weebSky.png" id="1_2xde1"]
 [ext_resource type="Script" uid="uid://bgsy5rb1y21ak" path="res://source/stage/school.gd" id="1_6jqn7"]
 [ext_resource type="Shader" uid="uid://dho05u5a40fe" path="res://source/shaders/vhs.gdshader" id="2_g616d"]
 [ext_resource type="Texture2D" uid="uid://bjjo2wglgcwco" path="res://assets/stages/week6/weebSchool.png" id="2_m7lkw"]
 [ext_resource type="Texture2D" uid="uid://douw77cs571uv" path="res://assets/stages/week6/weebStreet.png" id="3_458b4"]
-[ext_resource type="Texture2D" uid="uid://cjubgs5n486h5" path="res://assets/stages/week6/weebTrees.png" id="4_6jqn7"]
 [ext_resource type="PackedScene" uid="uid://bsvgftxd7osis" path="res://assets/stages/week6/bgFreaks.tscn" id="5_35kuy"]
 [ext_resource type="Texture2D" uid="uid://d3mimqhh2tqdn" path="res://assets/stages/week6/weebTreesBack.png" id="5_ouota"]
 [ext_resource type="Texture2D" uid="uid://djc31ia0m7ye4" path="res://assets/stages/week1/soaked.png" id="6_35kuy"]
@@ -17,154 +16,6 @@ shader_parameter/wiggle = 0.03
 shader_parameter/wiggle_speed = 25.0
 shader_parameter/smear = 1.0
 shader_parameter/blur_samples = 15
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ouota"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(0, 0, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g616d"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(513, 0, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v60a3"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(1026, 0, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oj0pb"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(1539, 0, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dcjqu"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(2052, 0, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nfysu"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(2565, 0, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_78la6"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(3078, 0, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w03md"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(0, 512, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jlft4"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(513, 512, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6sq7m"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(1026, 512, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yh22r"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(1539, 512, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j42vv"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(2052, 512, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_edapu"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(2565, 512, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ib305"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(3078, 512, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rbt4i"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(0, 1024, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xxyyf"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(513, 1024, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_22ffe"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(1026, 1024, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7633p"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(1539, 1024, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q1i5g"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(2052, 1024, 513, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c6otf"]
-atlas = ExtResource("4_6jqn7")
-region = Rect2(2565, 1024, 513, 512)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2xknw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ouota")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g616d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v60a3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oj0pb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dcjqu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nfysu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_78la6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w03md")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jlft4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6sq7m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yh22r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j42vv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_edapu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ib305")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rbt4i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xxyyf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_22ffe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7633p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q1i5g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c6otf")
-}],
-"loop": true,
-"name": &"tree idle",
-"speed": 5.0
-}]
 
 [node name="School" type="Node2D"]
 script = ExtResource("1_6jqn7")
@@ -202,14 +53,8 @@ position = Vector2(534, 441)
 scale = Vector2(6.1, 6.1)
 texture = ExtResource("5_ouota")
 
-[node name="bg_trees" type="AnimatedSprite2D" parent="."]
+[node name="bg_trees" type="Node2D" parent="."]
 texture_filter = 1
-position = Vector2(568, 448)
-scale = Vector2(6.1, 6.1)
-sprite_frames = SubResource("SpriteFrames_2xknw")
-animation = &"tree idle"
-autoplay = "tree idle"
-metadata/_edit_lock_ = true
 
 [node name="soaked" type="Sprite2D" parent="."]
 visible = false
@@ -218,10 +63,10 @@ position = Vector2(904, 371)
 scale = Vector2(0.79148, 1.17489)
 texture = ExtResource("6_35kuy")
 
+[node name="bgFreaks" parent="." instance=ExtResource("5_35kuy")]
+position = Vector2(655, 382)
+scale = Vector2(5.6, 5.6)
+
 [node name="petals" parent="." instance=ExtResource("9_v60a3")]
 position = Vector2(635, 246)
 scale = Vector2(3.5, 3.5)
-
-[node name="bgFreaks" parent="." instance=ExtResource("5_35kuy")]
-position = Vector2(666, 382)
-scale = Vector2(5.6, 5.6)

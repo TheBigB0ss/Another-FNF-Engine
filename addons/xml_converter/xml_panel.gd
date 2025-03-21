@@ -151,12 +151,13 @@ func create_res_file(image, anim, haveLoop, fps):
 			var frame_size = Vector2(
 				xmlList["width"] -frameTexture.region.size.x,
 				xmlList["height"] -frameTexture.region.size.y
-			)
+			);
 			
 			frameTexture.margin = Rect2(frame_offset, frame_size);
 			
 			if frameTexture.margin.size.x < abs(frameTexture.margin.position.x):
 				frameTexture.margin.size.x = abs(frameTexture.margin.position.x);
+				
 			if frameTexture.margin.size.y < abs(frameTexture.margin.position.y):
 				frameTexture.margin.size.y = abs(frameTexture.margin.position.y);
 				

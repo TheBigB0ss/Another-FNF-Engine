@@ -29,7 +29,7 @@ var settingsJson = {};
 signal ghost_tapping_miss;
 
 func _ready():
-	#reset_settings();
+	reset_settings();
 	load_settings();
 	
 	down_scroll = settingsJson["down scroll"];
