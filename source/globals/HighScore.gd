@@ -3,7 +3,7 @@ extends Node
 var score_data = {};
 
 func _ready():
-	clear_score();
+	#clear_score();
 	load_score();
 	print(score_data);
 	
