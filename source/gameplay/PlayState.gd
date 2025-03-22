@@ -384,17 +384,18 @@ var start_song = false;
 func _process(delta: float) -> void:
 	if start_song:
 		if !pause_menu.paused:
-			Conductor.getSongTime += (delta*1000)
 			inst.stream_paused = false;
 			voices.stream_paused = false;
 			
-		if !Conductor.getSongTime < 0 && Conductor.getSongTime != inst.get_playback_position() * 1000:
-			if inst.stream.get_length() >= voices.stream.get_length():
-				Conductor.getSongTime = inst.get_playback_position() * 1000;
-				
-			if voices.stream.get_length() > inst.stream.get_length():
-				Conductor.getSongTime = voices.get_playback_position() * 1000;
-				
+			Conductor.getSongTime = Conductor.getSongTime+(delta*1000)
+			var inst_pos = (inst.get_playback_position() + AudioServer.get_time_since_last_mix()) * 1000
+			if abs(inst_pos - Conductor.getSongTime) > 30:
+				inst.seek(Conductor.getSongTime / 1000.0)
+				voices.seek(Conductor.getSongTime / 1000.0)
+		else:
+			inst.stream_paused = true;
+			voices.stream_paused = true;
+			
 	healthBar.value = lerp(healthBar.value, health, 0.40);
 	sectionCamera.zoom = lerp(sectionCamera.zoom, Vector2(0.8, 0.8), 0.09) if curStage != "school" else lerp(sectionCamera.zoom, Vector2(1.0, 1.0), 0.09)
 	scoreText.scale = lerp(scoreText.scale, Vector2(0.049, 0.049), 0.08);
@@ -663,11 +664,14 @@ func _process(delta: float) -> void:
 			animatedIconP2.get_child(0).play_icon_anim("idle");
 			animatedIconP1.get_child(0).play_icon_anim("idle");
 			
-	timeText.text = str(int(inst.get_playback_position()) / 60).pad_zeros(1) + ":" + str(int(inst.get_playback_position()) % 60).pad_zeros(2) + " / " + str(int(inst.stream.get_length()) / 60).pad_zeros(1) + ":" + str(int(inst.stream.get_length()) % 60).pad_zeros(2);
-	if Conductor.getSongTime/1000 >= inst.stream.get_length() && !finished_song:
-		finished_song = true;
-		finishSong();
-		
+	if Conductor.getSongTime >= 0:
+		timeText.text = str(int(inst.get_playback_position()) / 60).pad_zeros(1) + ":" + str(int(inst.get_playback_position()) % 60).pad_zeros(2) + " / " + str(int(inst.stream.get_length()) / 60).pad_zeros(1) + ":" + str(int(inst.stream.get_length()) % 60).pad_zeros(2);
+		if Conductor.getSongTime/1000 >= inst.stream.get_length() && !finished_song:
+			finished_song = true;
+			finishSong();
+	else:
+		timeText.text = str("0:00") + " / " + str(int(inst.stream.get_length()) / 60).pad_zeros(1) + ":" + str(int(inst.stream.get_length()) % 60).pad_zeros(2);
+			
 	if health <= 0:
 		playerDead();
 		
@@ -972,6 +976,8 @@ func _input(ev):
 				pause_menu.visible = true;
 				
 				pause_menu._paused();
+				get_tree().paused = true;
+				
 				Discord.update_discord_info("pause", "Paused");
 				
 			if ev.keycode in [KEY_F1]:

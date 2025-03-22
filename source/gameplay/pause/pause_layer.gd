@@ -142,7 +142,6 @@ func _paused():
 	MusicManager.music.seek(0.0);
 	paused = true;
 	pause_panel.visible = true;
-	get_tree().paused = true;
 	
 func _resume():
 	MusicManager._stop_music();
