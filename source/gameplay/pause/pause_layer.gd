@@ -15,12 +15,14 @@ var is_paused = false;
 var offSetShit = 0;
 var coolOffset = 125
 
-var cool_arrow = Alphabet.new();
+#var cool_arrow = Alphabet.new();
 
 func _ready():
 	song_text.text = "";
 	difficulty_text.text = "";
 	death_count_text.text = "";
+	
+	Global.is_pause_mode = false;
 	
 	if Global.is_on_chartMode:
 		opts.insert(3, "EXIT CHART MODE")
@@ -34,10 +36,10 @@ func _ready():
 		options_grp.add_child(pause_opts);
 		offSetShit += coolOffset
 		
-	cool_arrow._creat_word(">");
-	cool_arrow.position.x = 70;
-	cool_arrow.modulate = Color("#ffd65d");
-	pause_panel.add_child(cool_arrow);
+	#cool_arrow._creat_word(">");
+	#cool_arrow.position.x = 70;
+	#cool_arrow.modulate = Color("#ffd65d");
+	#pause_panel.add_child(cool_arrow);
 	
 	death_count_text.text += str("Deaths: ",Global.death_count);
 	song_text.text += "Song: %s"%[SongData.chartData["song"]["song"]]
@@ -73,15 +75,17 @@ func _input(ev):
 func change_opt(opt):
 	cur_option += opt;
 	cur_option = wrapi(cur_option, 0, len(opts));
+	var tw = get_tree().create_tween();
+	tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	for i in options_grp.get_children():
 		if i == options_grp.get_children()[cur_option]:
 			i.modulate.a = 1;
-			cool_arrow.position.y = i.position.y + 260
+			#cool_arrow.position.y = i.position.y + 260
+			#tw.tween_property(cool_arrow, "position:y", i.position.y+170, 0.09).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT);
 		else:
 			i.modulate.a = 0.5;
 			
-	var tw = get_tree().create_tween();
-	tw.tween_property(options_grp, "position:y", 260-coolOffset*cur_option, 0.09);
+	tw.tween_property(options_grp, "position:y", 480-coolOffset*cur_option, 0.09).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT);
 	
 func _choice_pause_opts():
 	match opts[cur_option]:

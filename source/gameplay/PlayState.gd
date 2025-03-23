@@ -463,6 +463,7 @@ func _process(delta: float) -> void:
 				note.position.y = strumY
 				
 			note.can_press = int(note.ms) <= 125 && int(note.ms) >= -175 && note.isPlayer;
+			#print(note.ms)
 			
 			if note.is_pressing && note.isPlayer:
 				if note.sustainLenght > 0 or note.sustainLenght != 0 && !Global.is_a_bot && !note.missed:
@@ -506,35 +507,35 @@ func _process(delta: float) -> void:
 					
 	Global.pressed_note = false;
 	for note in playerNotes:
-		if !Global.is_a_bot && note != null:
-			if Input.is_action_just_pressed("ui_"+note.custom_note_dir) && note.isPlayer && playerNotes.size() > 0 && note.can_press && note.must_press && !note.missed:
-				if !note.is_a_bad_note:
-					pressedNote(note);
-					if note.sustainLenght == 0:
-						playBfAnim(note);
-						note.pressed();
-						playerNotes.erase(note);
-						notesList.erase(note);
-					else:
-						note.get_child(0).queue_free();
-						note.pressed();
-						note.is_pressing = true;
-						
-				elif note.is_a_bad_note:
-					if note.sustainLenght == 0:
-						health_loss = note.miss_health;
-						note.miss_note();
-						playBfMissAnim(note);
-						playerNotes.erase(note);
-						notesList.erase(note);
-						note.queue_free();
-					else:
-						playBfMissAnim(note);
-						note.get_child(0).queue_free();
-						note.miss_note();
-						note.is_pressing = true;
-						
-			if Input.is_action_pressed("ui_"+note.custom_note_dir) && note.isPlayer && playerNotes.size() > 0 && note.must_press && note.can_press && note.isSustain && !note.missed:
+		if note == null or Global.is_a_bot:
+			continue
+			
+		var notePressed = Input.is_action_just_pressed("ui_" + note.custom_note_dir)
+		var noteSustain = Input.is_action_pressed("ui_" + note.custom_note_dir)
+		var noteReleased = Input.is_action_just_released("ui_" + note.custom_note_dir)
+		
+		if notePressed && playerNotes.size() > 0 && note.isPlayer && note.can_press && note.must_press && !note.missed:
+			if !note.is_a_bad_note:
+				pressedNote(note)
+				if note.sustainLenght == 0:
+					playBfAnim(note)
+					note.pressed()
+				else:
+					note.get_child(0).queue_free()
+					note.pressed()
+					note.is_pressing = true
+			else:
+				if note.sustainLenght == 0:
+					health_loss = note.miss_health
+					note.miss_note()
+					playBfMissAnim(note)
+				else:
+					playBfMissAnim(note)
+					note.get_child(0).queue_free()
+					note.miss_note()
+					note.is_pressing = true
+					
+			if noteSustain && note.isPlayer && playerNotes.size() > 0 && note.must_press && note.can_press && note.isSustain && !note.missed:
 				if !note.is_a_bad_note && note.sustainLenght > 0 && !note.missed:
 					if note.sustainLenght <= 0:
 						note.is_pressing = false;
@@ -548,7 +549,7 @@ func _process(delta: float) -> void:
 						playerNotes.erase(note);
 						notesList.erase(note);
 						
-			if Input.is_action_just_released("ui_"+note.custom_note_dir) && note.isPlayer && playerNotes.size() > 0 && note.must_press && !note.is_a_bad_note && note.is_pressing:
+			if noteReleased && note.isPlayer && playerNotes.size() > 0 && note.must_press && !note.is_a_bad_note && note.is_pressing:
 				note.is_pressing = false;
 				note.missed = true;
 				
@@ -671,7 +672,7 @@ func _process(delta: float) -> void:
 			finishSong();
 	else:
 		timeText.text = str("0:00") + " / " + str(int(inst.stream.get_length()) / 60).pad_zeros(1) + ":" + str(int(inst.stream.get_length()) % 60).pad_zeros(2);
-			
+		
 	if health <= 0:
 		playerDead();
 		

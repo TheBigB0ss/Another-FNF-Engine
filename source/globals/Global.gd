@@ -1,7 +1,5 @@
 extends Node
 
-#just cool things :)
-
 var songsShit = [];
 var diffsShit = [];
 
@@ -29,6 +27,8 @@ var is_on_playstate = false;
 var finished_intro = false;
 
 var can_use_menus = true;
+
+var is_pause_mode = false;
 
 var is_on_chartMode = false;
 
