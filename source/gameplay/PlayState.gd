@@ -232,6 +232,8 @@ func _ready():
 		for j in i["sectionNotes"]:
 			array_notes.insert(0, [j[0], j[1], j[2], j[3], i["gfSection"], i["altAnim"], i["mustHitSection"], false]);
 			
+	SongData.updated_chart = SongData.chartData
+	
 	Conductor.mapBPMChanges(SongData.chartData);
 	Conductor.changeBpm(SongData.chartData["song"]["bpm"]);
 	
@@ -838,10 +840,10 @@ func playBfAnim(curNote):
 				
 		if bf.loopAnim && curNote.sustainLenght > 0 or curNote.sustainLenght != 0:
 			if bf.character is AnimatedSprite2D:
-				bf.character.speed_scale = 4.0;
+				bf.character.speed_scale = 3.6;
 				
 			if bf.character is Sprite2D:
-				bf.character_anim.playback_speed = 4.0;
+				bf.character_anim.playback_speed = 3.6;
 				
 	if curNote.sustainLenght > 0 && curNote.is_pressing && !curNote.is_a_bad_note:
 		if !health > 100 && !Global.is_a_bot:
@@ -889,10 +891,10 @@ func playOpponentAnim(curNote):
 				
 		if dad.loopAnim && curNote.sustainLenght > 0 or curNote.sustainLenght != 0:
 			if dad.character is AnimatedSprite2D:
-				dad.character.speed_scale = 4.0
+				dad.character.speed_scale = 3.6
 				
 			if dad.character is Sprite2D:
-				dad.character_anim.playback_speed = 4.0;
+				dad.character_anim.playback_speed = 3.6;
 				
 	if curNote.type == "Second opponent":
 		new_opponent._playAnim(coolAnims+altAnim);
@@ -969,7 +971,7 @@ func _input(ev):
 				playerDead();
 				
 			if ev.keycode in [KEY_7] && can_pause:
-				Global.songsShit = playlist if !Global.isStoryMode else playlist[0]; 
+				Global.songsShit = playlist if !Global.isStoryMode else playlist[0];
 				Global.changeScene("menus/editors/chart_editor/chartState", true, false)
 				
 			if (ev.keycode in [KEY_ENTER] || ev.keycode in [KEY_KP_ENTER]) && can_pause:

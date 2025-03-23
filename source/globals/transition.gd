@@ -22,7 +22,7 @@ func _ready():
 	$Control.hide();
 	fade_anim.speed_scale = transition_speed
 	add_child(stickersTimer)
-	if !deleteStickers && stickersGrp.get_child_count() <= 78:
+	if !deleteStickers && stickersGrp.get_child_count() <= 75:
 		stickersTimer.connect("timeout", spawnStickers)
 		
 	var jsonFile = FileAccess.open("res://assets/data/jsonSticker.json",FileAccess.READ);
@@ -36,7 +36,7 @@ func _ready():
 			stickersArray.append(j);
 			
 func spawnStickers():
-	if !deleteStickers && stickersGrp.get_child_count() <= 78:
+	if !deleteStickers && stickersGrp.get_child_count() <= 75:
 		for i in 1:
 			if can_show_stickers:
 				SoundStuff.playAudio("stickerSounds/keyClick%s"%[randi_range(1, 8)], false);
@@ -92,4 +92,6 @@ func _on_fade_anim_animation_finished(anim_name):
 		await get_tree().create_timer(0.1).timeout
 		$Control/TransMaksDown.hide();
 		$Control/TransMaksUp.hide();
+		if !can_show_stickers:
+			Global.can_use_menus = true;
 		deleteStickers = true;

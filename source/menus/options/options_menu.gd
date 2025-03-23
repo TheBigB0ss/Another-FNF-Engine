@@ -155,13 +155,13 @@ func _input(ev):
 					if ev.keycode in [KEY_RIGHT] && !is_on_key_mode:
 						settings.get_child(new_cur_option).opt_type += 1;
 						SoundStuff.playAudio("scrollMenu", false);
-						settings.get_child(new_cur_option).update_text(str("<", int(settings.get_child(new_cur_option).opt_type), ">"));
+						settings.get_child(new_cur_option).update_text(str("<", int(settings.get_child(new_cur_option).opt_type), ">"), -80);
 						GlobalOptions.get_setting(settings.get_child(new_cur_option).opt_name, settings.get_child(new_cur_option).opt_type);
 						
 					if ev.keycode in [KEY_LEFT] && !settings.get_child(new_cur_option).opt_type < 2 && !is_on_key_mode:
 						settings.get_child(new_cur_option).opt_type -= 1;
 						SoundStuff.playAudio("scrollMenu", false);
-						settings.get_child(new_cur_option).update_text(str("<", int(settings.get_child(new_cur_option).opt_type), ">"));
+						settings.get_child(new_cur_option).update_text(str("<", int(settings.get_child(new_cur_option).opt_type), ">"), -80);
 						GlobalOptions.get_setting(settings.get_child(new_cur_option).opt_name, settings.get_child(new_cur_option).opt_type);
 						
 				if Global.updated_options != [] && typeof(settings.get_child(new_cur_option).opt_type) == TYPE_FLOAT:

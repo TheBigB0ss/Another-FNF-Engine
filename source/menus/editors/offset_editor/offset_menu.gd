@@ -137,6 +137,7 @@ func change_anim(change):
 			play_anim();
 			
 var character_data_array = [];
+var can_grab = false;
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_shift"):
 		pos_change_value = 1;
@@ -174,16 +175,16 @@ func _process(delta: float) -> void:
 			"LoopAnim": %loopAnim.button_pressed
 		};
 		
-	#print(get_global_mouse_position().x, " ", get_global_mouse_position().y)
 	#for i in characterGrp.get_children():
-	#	print( i.character.scale.x, " ", i.character.scale.y)
-	
-	#if Input.is_action_just_pressed("mouse_click"):
-	#	for i in characterGrp.get_children():
-	#		if get_global_mouse_position().x >= i.character.position.x && get_global_mouse_position().x <= i.character.position.x + i.character.scale.x*50 && get_global_mouse_position().y > i.character.position.y && get_global_mouse_position().y < i.character.position.y + i.character.scale.y*50:
-	#			update_offset_value(get_global_mouse_position().x, get_global_mouse_position().y)
-	#			print("vifnij")
-	
+		#if Input.is_action_pressed("mouse_click"):
+			#if get_global_mouse_position().x > i.character.position.x+300 && get_global_mouse_position().x < i.character.position.x+700 && get_global_mouse_position().y >= i.character.position.y+120 && get_global_mouse_position().y < i.character.position.y+600:
+				#can_grab = true;
+			#else:
+				#can_grab = false;
+				#
+		#if can_grab:
+			#update_offset_value(get_global_mouse_position().x, get_global_mouse_position().y)
+			
 func addCharToList():
 	var charList = [];
 	var char = getFolderShit("assets/characters/");

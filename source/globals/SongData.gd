@@ -1,5 +1,6 @@
 extends Node
 
+var updated_chart = null;
 var chartData:Dictionary = {
 	"song":{
 		"player1": "",

@@ -97,7 +97,8 @@ func _ready():
 	inst.stream_paused = true;
 	voices.stream_paused = true;
 	
-	loadJson(%song_name.text, Global.diffsShit);
+	print(SongData.updated_chart)
+	loadJson(%song_name.text, Global.diffsShit, SongData.updated_chart);
 	load_section();
 	
 	grid.GRID_SIZE = grid_size;
@@ -263,7 +264,7 @@ func _process(delta):
 	chart_cam.position.y = song_line.position.y;
 	$bg.position.y = song_line.position.y;
 	
-	if Input.is_action_just_released("mouse_wheel_down"):
+	if Input.is_action_just_released("mouse_wheel_down") or Input.is_action_pressed("input_S"):
 		is_playing = false;
 		Conductor.getSongTime += (6500 * delta);
 		voices.play(Conductor.getSongTime/1000);
@@ -274,7 +275,20 @@ func _process(delta):
 		if song_line.position.y >= 675:
 			changeSection(curSection + 1);
 			
-	if Input.is_action_just_released("mouse_wheel_up"):
+		if Conductor.getSongTime/1000 >= inst.stream.get_length():
+			curSection = 0;
+			Conductor.curBeat = 0;
+			Conductor.curStep = 0;
+			Conductor.lastBeat = 0;
+			Conductor.lastStep = 0;
+			Conductor.getSongTime = 0.0;
+			
+			Conductor.changeBpm(new_chartData["song"]["bpm"]);
+			Conductor.bpm = new_chartData["song"]["bpm"];
+			
+			changeSection(0);
+			
+	if Input.is_action_just_released("mouse_wheel_up") or Input.is_action_pressed("input_W"):
 		if Conductor.getSongTime > 0:
 			is_playing = false;
 			Conductor.getSongTime -= (6500 * delta);
@@ -424,7 +438,7 @@ func add_note(strumtime, noteData, sustain, type):
 	print(curselected_note);
 	load_section();
 	
-func loadJson(song, difficulty = ""):
+func loadJson(song, difficulty = "", mew_chart = null):
 	var difficultyPath = "";
 	if difficulty == "" or difficulty == "normal":
 		difficultyPath = "res://assets/data/%s/%s.json"%[song, song];
@@ -437,9 +451,13 @@ func loadJson(song, difficulty = ""):
 	var jsonFile = FileAccess.open(difficultyPath, FileAccess.READ);
 	var jsonData = JSON.new();
 	jsonData.parse(jsonFile.get_as_text());
-	new_chartData = jsonData.get_data();
 	jsonFile.close();
 	
+	if mew_chart == null:
+		new_chartData = jsonData.get_data()
+	else:
+		new_chartData = mew_chart;
+		
 	change_icons(0)
 	
 	if !new_chartData["song"].has("speed"):
